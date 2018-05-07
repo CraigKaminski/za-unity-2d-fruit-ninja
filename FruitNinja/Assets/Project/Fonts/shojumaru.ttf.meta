@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b0f9ef62f992f4e4ebfb2ff6bb79f68d
+timeCreated: 1525653864
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Shojumaru
+  fontNames:
+  - Shojumaru
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
