@@ -113,6 +113,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &613138601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 613138603}
+  - component: {fileID: 613138602}
+  m_Layer: 0
+  m_Name: FruitSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &613138602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613138601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8840077f9dfc9d344947c86751bbcc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1258906906974020, guid: 001361359a7ec884ca25a15e144d28dc, type: 2}
+  interval: 2
+  minimumX: -2.5
+  maximumX: 2.5
+  y: -5.5
+  sprites:
+  - {fileID: 21300000, guid: f97cf724391f31442bdf991e1a8e7ee3, type: 3}
+  - {fileID: 21300002, guid: f97cf724391f31442bdf991e1a8e7ee3, type: 3}
+  - {fileID: 21300004, guid: f97cf724391f31442bdf991e1a8e7ee3, type: 3}
+  - {fileID: 21300006, guid: f97cf724391f31442bdf991e1a8e7ee3, type: 3}
+--- !u!4 &613138603
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613138601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.17312145, y: 0.16027167, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &779884836
 GameObject:
   m_ObjectHideFlags: 0
