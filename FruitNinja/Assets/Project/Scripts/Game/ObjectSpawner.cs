@@ -25,6 +25,7 @@ public class ObjectSpawner : MonoBehaviour {
     {
         // Instantiate and position the object.
         GameObject instance = Instantiate(prefab);
+        instance.transform.SetParent(transform);
         instance.transform.position = new Vector2(
             Random.Range(minimumX, maximumX),
             y
