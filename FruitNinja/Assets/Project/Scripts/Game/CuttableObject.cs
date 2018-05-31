@@ -17,7 +17,7 @@ public class CuttableObject : MonoBehaviour {
                 GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score += 10;
             } else
             {
-
+                GameObject.Find("LifeCounter").transform.GetComponent<LifeCounter>().LoseLife();
             }
         }
     }
