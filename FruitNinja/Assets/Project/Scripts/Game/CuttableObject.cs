@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CuttableObject : MonoBehaviour {
+public class CuttableObject : MonoBehaviour
+{
+    public delegate void ObjectDestroyedHandler(bool harmful);
+    public event ObjectDestroyedHandler OnDestroyed;
 
     public bool harmful;
 
@@ -10,15 +13,12 @@ public class CuttableObject : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Cut")
         {
-            Destroy(gameObject);
-
-            if (!harmful)
+            if (OnDestroyed != null)
             {
-                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score += 10;
-            } else
-            {
-                GameObject.Find("LifeCounter").transform.GetComponent<LifeCounter>().LoseLife();
+                OnDestroyed(harmful);
             }
+
+            Destroy(gameObject);
         }
     }
 }

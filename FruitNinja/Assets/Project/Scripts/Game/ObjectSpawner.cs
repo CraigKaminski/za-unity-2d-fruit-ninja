@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : MonoBehaviour {
+public class ObjectSpawner : MonoBehaviour
+{
+    public delegate void ObjectSpawnedHandler(CuttableObject obj);
+    public event ObjectSpawnedHandler OnObjectSpawned;
 
     [Header("Targer")]
     public GameObject prefab;
@@ -16,11 +19,12 @@ public class ObjectSpawner : MonoBehaviour {
     [Header("Visuals")]
     public Sprite[] sprites;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         InvokeRepeating("Spawn", interval, interval);
-	}
-	
+    }
+
     private void Spawn()
     {
         // Instantiate and position the object.
@@ -30,6 +34,11 @@ public class ObjectSpawner : MonoBehaviour {
             Random.Range(minimumX, maximumX),
             y
         );
+
+        if (OnObjectSpawned != null)
+        {
+            OnObjectSpawned(instance.GetComponent<CuttableObject>());
+        }
 
         // Set a random sprite.
         Sprite randomSprite = sprites[Random.Range(0, sprites.Length)];
