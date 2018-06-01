@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LifeCounter : MonoBehaviour {
 
@@ -16,6 +18,8 @@ public class LifeCounter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        gameOverGroup.SetActive(false);
+
         lives = new List<GameObject>();
         for (int i = 0; i < numberOfLives; i++)
         {
@@ -35,8 +39,19 @@ public class LifeCounter : MonoBehaviour {
 
         if (numberOfLives <= 0)
         {
+            gameOverGroup.SetActive(true);
+            Text gameOverText = gameOverGroup.GetComponentInChildren<Text>();
+            int score = GameObject.Find("ScoreText").GetComponent<ScoreText>().Score;
+            gameOverText.text = string.Format(gameOverText.text, score);
             scoreText.SetActive(false);
-            Debug.Log("Game over!");
+        }
+    }
+
+    private void Update()
+    {
+        if (numberOfLives <= 0 && Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("Title");
         }
     }
 }
